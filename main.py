@@ -7,7 +7,6 @@ video = cv2.VideoCapture('ex01.mp4')  # Cria um objeto VideoCapture para ler o v
 cv2.namedWindow('img', cv2.WINDOW_NORMAL)  # Cria uma janela chamada 'img'
 modelo = YOLO('yolov8n.pt')  # Carrega o modelo YOLO pré-treinado 'yolov8n.pt'
 
-# area = [510,230,910,700]  # Coordenadas da área de interesse (comentada)
 area = [100,190, 1150,700]  # Coordenadas da área de interesse (retângulo verde)
 
 alarmeCtl = False  # Variável de controle para o alarme (inicialmente desligado)
@@ -15,7 +14,7 @@ alarmeCtl = False  # Variável de controle para o alarme (inicialmente desligado
 def alarme():  # Função para reproduzir o som do alarme
     global alarmeCtl  # Acessa a variável alarmeCtl no escopo global
     for _ in range(7):  # Loop para reproduzir o som 7 vezes
-        winsound.Beep(2500,500)  # Reproduz um som de 2500 Hz por 500 milissegundos
+        winsound.Beep(2500,100)  # Reproduz um som de 2500 Hz por 100 milissegundos
 
     alarmeCtl = False  # Desliga o alarme após reproduzir o som
 
